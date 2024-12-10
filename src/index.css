@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-primary: #9B403D;
+  --brand-light: #FBFAFA;
+  --brand-accent: #DDD6CC;
+  --brand-dark: #313131;
+}
+
+:root.dark {
+  --brand-primary: #9B403D;
+  --brand-background: #1F1F1F;
+  --brand-surface: #2D2D2D;
+  --brand-accent: #4A4A4A;
+  --brand-text: #FBFAFA;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-light text-brand-dark transition-colors duration-200
+           dark:bg-brand-background dark:text-brand-text;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-primary text-brand-light px-4 py-2 rounded-lg 
+           hover:opacity-90 transition-all duration-200
+           active:scale-95 transform disabled:opacity-50
+           dark:bg-brand-primary dark:text-brand-text;
+  }
+
+  .btn-secondary {
+    @apply bg-brand-accent text-brand-dark px-4 py-2 rounded-lg 
+           hover:opacity-90 transition-all duration-200
+           active:scale-95 transform disabled:opacity-50
+           dark:bg-brand-accent dark:text-brand-text;
+  }
+
+  .card {
+    @apply bg-brand-light border border-brand-accent rounded-lg p-4 shadow-sm
+           dark:bg-brand-surface dark:border-brand-accent dark:text-brand-text
+           transition-colors duration-200;
+  }
+
+  .theme-toggle {
+    @apply fixed bottom-4 right-4 p-2 rounded-full bg-brand-accent text-brand-dark
+           dark:bg-brand-accent dark:text-brand-text
+           hover:opacity-90 transition-all duration-200
+           active:scale-95 transform shadow-lg;
+  }
+}
+
+.swipe-card-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 600px;
+}

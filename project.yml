@@ -1,0 +1,60 @@
+name: ThePassApp
+options:
+  bundleIdPrefix: com.thepassapp
+  deploymentTarget:
+    iOS: 15.0
+  xcodeVersion: "14.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    DEVELOPMENT_TEAM: "" # Add your team ID here
+    SWIFT_VERSION: 5.0
+
+targets:
+  ThePassApp:
+    type: application
+    platform: iOS
+    sources:
+      - path: ThePassApp
+    settings:
+      base:
+        INFOPLIST_FILE: ThePassApp/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.thepassapp.ios
+        TARGETED_DEVICE_FAMILY: 1
+    info:
+      path: ThePassApp/Info.plist
+      properties:
+        CFBundleName: The Pass App
+        CFBundleDisplayName: The Pass App
+        CFBundlePackageType: APPL
+        CFBundleShortVersionString: 1.0.0
+        CFBundleVersion: 1
+        UILaunchStoryboardName: LaunchScreen
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIRequiresFullScreen: true
+        NSCameraUsageDescription: "We need camera access to update your profile picture"
+        NSPhotoLibraryUsageDescription: "We need photo library access to update your profile picture"
+
+  ThePassAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - ThePassAppTests
+    dependencies:
+      - target: ThePassApp
+
+  ThePassAppUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - ThePassAppUITests
+    dependencies:
+      - target: ThePassApp
