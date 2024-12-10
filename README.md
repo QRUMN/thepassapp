@@ -109,7 +109,11 @@ Contributions are welcome! Please read our contributing guidelines before submit
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+ThePassApp - Copyright 2024. All rights reserved.
+
+This software is proprietary and confidential. No part of this software may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the copyright holder.
+
+Unauthorized copying, modification, distribution, or use of this software is strictly prohibited.
 
 ## Contact
 
